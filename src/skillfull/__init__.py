@@ -25,7 +25,7 @@ from skillfull.models import Skill
 from skillfull.parser import parse_frontmatter
 from skillfull.registry import SkillRegistry
 
-__version__ = "0.2.0"
+__version__ = "0.1.0"
 SPEC_VERSION = "0.2"
 
 __all__ = [
