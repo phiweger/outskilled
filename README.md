@@ -1,11 +1,11 @@
-# skillfull
+# outskilled
 
 Filesystem-based agent skill loader. One spec, one reference
 implementation, with a first-party adapter for `pydantic-ai`.
 
 A **skill** is a folder containing a `SKILL.md` file — YAML
 frontmatter describing what the skill does plus a markdown body
-explaining how to do it. `skillfull` discovers skills (arbitrary
+explaining how to do it. `outskilled` discovers skills (arbitrary
 nesting supported), validates them against the [spec](SPEC.md), and
 renders a system-prompt-ready manifest. The pydantic-ai adapter wires
 the manifest into an `Agent`'s instructions and registers a
@@ -41,7 +41,7 @@ unchanged.
 
 ```python
 from pathlib import Path
-from skillfull import SkillRegistry
+from outskilled import SkillRegistry
 
 # Either pass roots directly...
 reg = SkillRegistry([Path("./skills")])
@@ -85,14 +85,14 @@ to the config file's directory.
 Install the extra:
 
 ```bash
-pip install "skillfull[pydantic-ai]"
+pip install "outskilled[pydantic-ai]"
 ```
 
 Attach a registry to an existing `Agent`:
 
 ```python
 from pydantic_ai import Agent
-from skillfull.pydanticai import attach_skills
+from outskilled.pydanticai import attach_skills
 
 agent = Agent("anthropic:claude-sonnet-4-6")
 attach_skills(agent, "skills/skills.yaml")
@@ -101,7 +101,7 @@ attach_skills(agent, "skills/skills.yaml")
 Or build an Agent with skills already wired up:
 
 ```python
-from skillfull.pydanticai import skill_aware_agent
+from outskilled.pydanticai import skill_aware_agent
 
 agent = skill_aware_agent(
     "anthropic:claude-sonnet-4-6",
@@ -167,12 +167,12 @@ disclosure.
 ## Layout
 
 ```
-skillfull/
+outskilled/
 ├── SPEC.md
 ├── README.md
 ├── LICENSE
 ├── pyproject.toml
-├── src/skillfull/
+├── src/outskilled/
 │   ├── __init__.py     # public API
 │   ├── errors.py       # typed exceptions
 │   ├── models.py       # Skill dataclass
@@ -201,7 +201,7 @@ Publishing is automated via `.github/workflows/publish.yml`. To cut a
 release:
 
 1. Bump `version` in `pyproject.toml` and `__version__` in
-   `src/skillfull/__init__.py` (keep them in sync — the workflow
+   `src/outskilled/__init__.py` (keep them in sync — the workflow
    checks the tag against `pyproject.toml`).
 2. Commit, merge to `main`.
 3. On GitHub, **Releases → Draft a new release**, create a tag
@@ -211,12 +211,12 @@ The workflow runs the test suite, builds sdist + wheel, and uploads
 to PyPI via trusted publishing (OIDC — no API token in secrets).
 
 One-time PyPI setup (only needed on the first release): on PyPI,
-**Your projects → skillfull → Publishing → Add a new publisher**:
+**Your projects → outskilled → Publishing → Add a new publisher**:
 
 | Field | Value |
 |---|---|
 | Owner | `phiweger` |
-| Repository | `skillfull` |
+| Repository | `outskilled` |
 | Workflow filename | `publish.yml` |
 | Environment name | `pypi` |
 

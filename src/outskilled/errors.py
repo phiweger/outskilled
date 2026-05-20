@@ -4,7 +4,7 @@ from __future__ import annotations
 
 
 class SkillError(Exception):
-    """Base class for every spec-violation error raised by skillfull."""
+    """Base class for every spec-violation error raised by outskilled."""
 
 
 class SkillParseError(SkillError):

@@ -4,7 +4,7 @@ name: Publish to PyPI
 #
 # Release flow:
 #   1. Bump `version` in pyproject.toml and `__version__` in
-#      src/skillfull/__init__.py to the new version (e.g., 0.2.1).
+#      src/outskilled/__init__.py to the new version (e.g., 0.2.1).
 #   2. Commit and merge to main.
 #   3. On GitHub, Releases -> Draft a new release -> tag `v0.2.1` ->
 #      Publish. This workflow runs and uploads sdist+wheel to PyPI.
@@ -14,7 +14,7 @@ name: Publish to PyPI
 #
 #   PyPI -> your project -> Publishing -> Add a new publisher
 #     Owner:               phiweger
-#     Repository:          skillfull
+#     Repository:          outskilled
 #     Workflow filename:   publish.yml
 #     Environment name:    pypi
 #
@@ -73,7 +73,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: pypi
-      url: https://pypi.org/p/skillfull
+      url: https://pypi.org/p/outskilled
     permissions:
       id-token: write
     steps:

@@ -32,7 +32,7 @@ from pydantic_ai.messages import (  # noqa: E402
 )
 from pydantic_ai.models.function import AgentInfo, FunctionModel  # noqa: E402
 
-from skillfull.pydanticai import attach_skills  # noqa: E402
+from outskilled.pydanticai import attach_skills  # noqa: E402
 
 SKILLS_CONFIG = Path(__file__).parent / "skills" / "skills.yaml"
 

@@ -8,7 +8,7 @@ format* and *discovery rules* so a skill written for one host runs in
 another.
 
 This document is the source of truth. Reference implementation lives
-under `src/skillfull/`.
+under `src/outskilled/`.
 
 ---
 

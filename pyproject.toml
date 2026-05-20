@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "skillfull"
+name = "outskilled"
 version = "0.1.0"
 description = "Filesystem-based agent skill loader: spec + reference implementation."
 readme = "README.md"
@@ -33,7 +33,7 @@ dev = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/skillfull"]
+packages = ["src/outskilled"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

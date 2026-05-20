@@ -1,4 +1,4 @@
-"""Shared fixtures for skillfull tests."""
+"""Shared fixtures for outskilled tests."""
 
 from __future__ import annotations
 

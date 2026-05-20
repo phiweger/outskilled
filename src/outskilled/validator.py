@@ -6,7 +6,7 @@ import re
 import unicodedata
 from pathlib import Path
 
-from skillfull.errors import SkillValidationError, UnsafeSkillNameError
+from outskilled.errors import SkillValidationError, UnsafeSkillNameError
 
 NAME_RE = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 

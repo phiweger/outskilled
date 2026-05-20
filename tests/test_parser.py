@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import pytest
 
-from skillfull import parse_frontmatter
-from skillfull.errors import SkillParseError
+from outskilled import parse_frontmatter
+from outskilled.errors import SkillParseError
 
 
 def test_parses_dict_and_body() -> None:

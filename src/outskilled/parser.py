@@ -10,7 +10,7 @@ import re
 
 import yaml
 
-from skillfull.errors import SkillParseError
+from outskilled.errors import SkillParseError
 
 _FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?)\n?---\s*(?:\n|\Z)", re.DOTALL)
 

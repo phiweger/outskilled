@@ -18,16 +18,16 @@ from pathlib import Path
 
 import yaml
 
-from skillfull.errors import (
+from outskilled.errors import (
     DuplicateSkillError,
     SkillError,
     UnknownSkillError,
     UnsafeSkillNameError,
 )
-from skillfull.manifest import render_markdown, render_xml
-from skillfull.models import Skill
-from skillfull.parser import parse_frontmatter
-from skillfull.validator import (
+from outskilled.manifest import render_markdown, render_xml
+from outskilled.models import Skill
+from outskilled.parser import parse_frontmatter
+from outskilled.validator import (
     validate_allowed_tools,
     validate_always_load,
     validate_compatibility,

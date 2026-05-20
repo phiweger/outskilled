@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from skillfull import Skill, render_markdown, render_xml
+from outskilled import Skill, render_markdown, render_xml
 
 
 def _skill(

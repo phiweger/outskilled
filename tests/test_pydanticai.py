@@ -23,8 +23,8 @@ from pydantic_ai.messages import (  # noqa: E402
 )
 from pydantic_ai.models.function import AgentInfo, FunctionModel  # noqa: E402
 
-from skillfull import SkillError, SkillRegistry  # noqa: E402
-from skillfull.pydanticai import attach_skills, skill_aware_agent  # noqa: E402
+from outskilled import SkillError, SkillRegistry  # noqa: E402
+from outskilled.pydanticai import attach_skills, skill_aware_agent  # noqa: E402
 
 
 def _write(parent: Path, dirname: str, frontmatter: str, body: str = "body\n") -> Path:

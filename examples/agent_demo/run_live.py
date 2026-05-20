@@ -7,14 +7,14 @@ keyword stub, no mocking, no shortcuts.
 
 Usage:
 
-    pip install "skillfull[pydantic-ai]" anthropic
+    pip install "outskilled[pydantic-ai]" anthropic
     export ANTHROPIC_API_KEY=...
     python examples/agent_demo/run_live.py
 
 Optional env vars:
 
-    SKILLFULL_EVAL_MODEL   # default: anthropic:claude-sonnet-4-6
-    SKILLFULL_EVAL_SAMPLES # default: 1 — runs per prompt; reports hit-rate
+    OUTSKILLED_EVAL_MODEL   # default: anthropic:claude-sonnet-4-6
+    OUTSKILLED_EVAL_SAMPLES # default: 1 — runs per prompt; reports hit-rate
 
 Exit codes:
 
@@ -24,7 +24,7 @@ Exit codes:
     2  ANTHROPIC_API_KEY missing or pydantic-ai import failed.
 
 The eval is intentionally small (eight prompts) so it costs little to
-run. Each run is a single sample by default; bump `SKILLFULL_EVAL_SAMPLES`
+run. Each run is a single sample by default; bump `OUTSKILLED_EVAL_SAMPLES`
 to N to run each prompt N times and report a hit-rate per prompt.
 """
 
@@ -38,7 +38,7 @@ from pathlib import Path
 from pydantic_ai import Agent
 from pydantic_ai.messages import ToolCallPart
 
-from skillfull.pydanticai import attach_skills
+from outskilled.pydanticai import attach_skills
 
 SKILLS_CONFIG = Path(__file__).parent / "skills" / "skills.yaml"
 
@@ -159,9 +159,9 @@ def main() -> int:
         )
         return 2
 
-    model = os.environ.get("SKILLFULL_EVAL_MODEL", DEFAULT_MODEL)
+    model = os.environ.get("OUTSKILLED_EVAL_MODEL", DEFAULT_MODEL)
     try:
-        samples = max(1, int(os.environ.get("SKILLFULL_EVAL_SAMPLES", "1")))
+        samples = max(1, int(os.environ.get("OUTSKILLED_EVAL_SAMPLES", "1")))
     except ValueError:
         samples = 1
 

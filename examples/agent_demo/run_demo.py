@@ -23,7 +23,7 @@ trip, but it is testing the router we wrote, not the model.
 
 Run it:
 
-    pip install "skillfull[pydantic-ai]"
+    pip install "outskilled[pydantic-ai]"
     python examples/agent_demo/run_demo.py
 """
 
@@ -42,8 +42,8 @@ from pydantic_ai.messages import (
 )
 from pydantic_ai.models.function import AgentInfo, FunctionModel
 
-from skillfull import SkillRegistry
-from skillfull.pydanticai import attach_skills
+from outskilled import SkillRegistry
+from outskilled.pydanticai import attach_skills
 
 SKILLS_CONFIG = Path(__file__).parent / "skills" / "skills.yaml"
 

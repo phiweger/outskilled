@@ -1,6 +1,6 @@
 # agent_demo
 
-End-to-end demo of `skillfull` + `pydantic-ai`. Four skills wired into
+End-to-end demo of `outskilled` + `pydantic-ai`. Four skills wired into
 an Agent, a plumbing check that runs offline, and a real
 LLM-vs-manifest eval against Claude Sonnet 4.6.
 
@@ -53,7 +53,7 @@ pytest examples/agent_demo/test_skill_routing.py -v
 ## Run the live routing eval
 
 ```bash
-pip install "skillfull[pydantic-ai]" anthropic
+pip install "outskilled[pydantic-ai]" anthropic
 export ANTHROPIC_API_KEY=...
 python examples/agent_demo/run_live.py
 ```
@@ -67,8 +67,8 @@ Optional env vars:
 
 | Var | Default | Purpose |
 |---|---|---|
-| `SKILLFULL_EVAL_MODEL` | `anthropic:claude-sonnet-4-6` | Override the model. |
-| `SKILLFULL_EVAL_SAMPLES` | `1` | Runs per prompt; reports hit rate. LLMs are stochastic — bump to 3–5 for a stable read. |
+| `OUTSKILLED_EVAL_MODEL` | `anthropic:claude-sonnet-4-6` | Override the model. |
+| `OUTSKILLED_EVAL_SAMPLES` | `1` | Runs per prompt; reports hit rate. LLMs are stochastic — bump to 3–5 for a stable read. |
 
 Exit codes: `0` clean pass, `1` one or more prompts misrouted, `2`
 config error (missing `ANTHROPIC_API_KEY` etc.).

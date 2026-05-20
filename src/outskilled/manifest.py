@@ -9,7 +9,7 @@ from __future__ import annotations
 from collections.abc import Iterable
 from xml.sax.saxutils import escape
 
-from skillfull.models import Skill
+from outskilled.models import Skill
 
 _XML_QUOTE_ENTITIES = {'"': "&quot;", "'": "&apos;"}
 

@@ -6,7 +6,7 @@ from pathlib import Path
 
 import pytest
 
-from skillfull import (
+from outskilled import (
     DuplicateSkillError,
     Skill,
     SkillError,
@@ -437,7 +437,7 @@ def test_missing_frontmatter_block_produces_clear_error(tmp_path: Path) -> None:
     skill_dir = tmp_path / "broken"
     skill_dir.mkdir()
     (skill_dir / "SKILL.md").write_text("# just a body\n", encoding="utf-8")
-    from skillfull.errors import SkillParseError
+    from outskilled.errors import SkillParseError
 
     with pytest.raises(SkillParseError, match="must begin with"):
         SkillRegistry([tmp_path])

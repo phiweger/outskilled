@@ -1,23 +1,23 @@
-"""Pydantic-AI adapter for skillfull.
+"""Pydantic-AI adapter for outskilled.
 
 Wires a `SkillRegistry` into a `pydantic_ai.Agent` so the model sees
 the manifest in its instructions (Level 1) and can load skill bodies
 on demand via a `load_skill` tool (Level 2). An opt-in
 `read_skill_resource` tool exposes Level 3 reference files.
 
-Optional dependency: install via `pip install skillfull[pydantic-ai]`.
+Optional dependency: install via `pip install outskilled[pydantic-ai]`.
 
 Usage::
 
     from pydantic_ai import Agent
-    from skillfull.pydanticai import attach_skills
+    from outskilled.pydanticai import attach_skills
 
     agent = Agent("anthropic:claude-sonnet-4-6")
     attach_skills(agent, "skills/skills.yaml")
 
 Or the one-liner factory::
 
-    from skillfull.pydanticai import skill_aware_agent
+    from outskilled.pydanticai import skill_aware_agent
     agent = skill_aware_agent(
         "anthropic:claude-sonnet-4-6",
         skills="skills/skills.yaml",
@@ -33,12 +33,12 @@ try:
     from pydantic_ai import Agent
 except ImportError as exc:  # pragma: no cover - guard only
     raise ImportError(
-        "pydantic-ai is required for skillfull.pydanticai. "
-        "Install with: pip install skillfull[pydantic-ai]"
+        "pydantic-ai is required for outskilled.pydanticai. "
+        "Install with: pip install outskilled[pydantic-ai]"
     ) from exc
 
-from skillfull.errors import SkillError, UnknownSkillError, UnsafeSkillNameError
-from skillfull.registry import SkillRegistry
+from outskilled.errors import SkillError, UnknownSkillError, UnsafeSkillNameError
+from outskilled.registry import SkillRegistry
 
 SKILL_INSTRUCTIONS_PREAMBLE = """\
 You have access to a set of installed skills. Each skill is a piece of
@@ -50,7 +50,7 @@ applies, then call the `load_skill` tool with the exact `<name>` to
 load the skill's full instructions before acting."""
 
 
-_ATTACHED_FLAG = "_skillfull_attached"
+_ATTACHED_FLAG = "_outskilled_attached"
 
 
 def attach_skills(
@@ -114,7 +114,7 @@ def attach_skills(
         if prompt_block:
 
             @agent.instructions
-            def _skillfull_manifest() -> str:
+            def _outskilled_manifest() -> str:
                 return prompt_block
 
     if load_tool:

@@ -6,8 +6,8 @@ from pathlib import Path
 
 import pytest
 
-from skillfull.errors import SkillValidationError, UnsafeSkillNameError
-from skillfull.validator import (
+from outskilled.errors import SkillValidationError, UnsafeSkillNameError
+from outskilled.validator import (
     MAX_COMPATIBILITY_LENGTH,
     MAX_DESCRIPTION_LENGTH,
     MAX_NAME_LENGTH,
